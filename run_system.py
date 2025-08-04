@@ -98,12 +98,14 @@ def run_etl_pipeline():
 def start_api_server():
     """Start the FastAPI server"""
     try:
-        logger.info("Starting FastAPI server...")
+        import os
+        port = int(os.environ.get('PORT', 8000))  # Use Render's PORT env variable
+        logger.info(f"Starting FastAPI server on port {port}...")
         subprocess.Popen([
             sys.executable, "-m", "uvicorn", 
-            "src.api.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"
+            "src.api.main:app", "--host", "0.0.0.0", "--port", str(port)
         ])
-        logger.info("FastAPI server started on http://localhost:8000")
+        logger.info(f"FastAPI server started on port {port}")
         time.sleep(3)  # Give server time to start
         return True
     except Exception as e:
@@ -141,6 +143,7 @@ def main():
     """Main function to run the entire ML-powered analytics system"""
     logger.info("🎯 Starting RetailOps ML Analytics Platform")
     logger.info("=" * 50)
+    
     # Run ETL pipeline
     if not run_etl_pipeline():
         logger.error("Failed to run ETL pipeline. Exiting.")
@@ -151,15 +154,26 @@ def main():
         logger.error("Failed to start API server")
         return
     
-    # Start Streamlit dashboard
-    if not start_streamlit_dashboard():
-        logger.error("Failed to start Streamlit dashboard")
-        return
-    
-    # Open browser
-    browser_thread = Thread(target=open_browser)
-    browser_thread.daemon = True
-    browser_thread.start()
+    # For deployment, keep the main process alive
+    import os
+    if os.environ.get('RENDER'):
+        logger.info("Running in Render environment - API server is primary service")
+        try:
+            # Keep the main process alive
+            while True:
+                time.sleep(30)
+        except KeyboardInterrupt:
+            logger.info("Shutting down...")
+    else:
+        # Local development - start Streamlit dashboard
+        if not start_streamlit_dashboard():
+            logger.error("Failed to start Streamlit dashboard")
+            return
+        
+        # Open browser
+        browser_thread = Thread(target=open_browser)
+        browser_thread.daemon = True
+        browser_thread.start()
 
 if __name__ == "__main__":
     main()
