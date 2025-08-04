@@ -4,9 +4,9 @@ numpy==1.26.4
 openpyxl==3.1.2
 
 # Cloud & Database
-snowflake-connector-python==3.6.0
-snowflake-sqlalchemy==1.5.1
-sqlalchemy==2.0.23
+snowflake-connector-python>=3.6.0
+snowflake-sqlalchemy>=1.6.0
+sqlalchemy>=1.4.0,<2.0.0
 
 # Web Framework & API
 fastapi==0.104.1
