@@ -22,7 +22,7 @@ langsmith==0.0.69
 langchain-experimental==0.0.47
 
 # Data Science & ML
-scikit-learn>=1.3.0,<1.4.0
+scikit-learn==1.3.2
 plotly>=5.15.0
 seaborn>=0.12.0
 matplotlib>=3.7.0
@@ -34,9 +34,9 @@ statsmodels==0.14.1
 pyspark==3.5.0
 
 # Deep Learning
-tensorflow>=2.13.0,<2.16.0
-torch>=2.0.0,<2.2.0
-torchvision>=0.15.0,<0.17.0
+tensorflow==2.19.0
+torch==2.2.1
+torchvision>=0.17.0
 
 # Statistical Testing & Experimentation
 scipy==1.11.4
