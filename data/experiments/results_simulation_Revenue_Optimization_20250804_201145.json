@@ -1,0 +1,43 @@
+{
+  "experiment_name": "Revenue_Optimization",
+  "experiment_type": "simulated_ab_test",
+  "control_group": {
+    "mean": 100.38664111644651,
+    "std": 19.574524154947085,
+    "median": 100.50601224469776,
+    "sample_size": 1000
+  },
+  "treatment_group": {
+    "mean": 106.41672474498311,
+    "std": 19.939110505892604,
+    "median": 106.26154264658092,
+    "sample_size": 1000
+  },
+  "statistical_tests": {
+    "t_test": {
+      "t_statistic": -6.821118762322212,
+      "p_value": 1.1930227028536482e-11,
+      "significant": true
+    },
+    "mann_whitney_u": {
+      "u_statistic": 410838.0,
+      "p_value": 5.031171078462739e-12,
+      "significant": true
+    }
+  },
+  "effect_analysis": {
+    "effect_size_cohens_d": 0.25,
+    "absolute_difference": 6.030083628536602,
+    "relative_change_percent": 6.006858643215112,
+    "confidence_interval_95": [
+      4.327573321641258,
+      7.742030476536716
+    ]
+  },
+  "business_impact": {
+    "significant": true,
+    "recommendation": "Launch",
+    "confidence_level": "High"
+  },
+  "timestamp": "2025-08-04T20:11:45.510196"
+}

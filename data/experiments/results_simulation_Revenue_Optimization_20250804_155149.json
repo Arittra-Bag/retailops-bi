@@ -1,0 +1,20 @@
+{
+  "experiment_name": "Revenue_Optimization",
+  "experiment_type": "simulated_ab_test",
+  "control_group": {
+    "mean": 100.38664111644651,
+    "std": 19.574524154947085,
+    "median": 100.50601224469776,
+    "sample_size": 1000
+  },
+  "treatment_group": {
+    "mean": 106.41672474498311,
+    "std": 19.939110505892604,
+    "median": 106.26154264658092,
+    "sample_size": 1000
+  },
+  "statistical_tests": {
+    "t_test": {
+      "t_statistic": -6.821118762322212,
+      "p_value": 1.1930227028536482e-11,
+      "significant": 

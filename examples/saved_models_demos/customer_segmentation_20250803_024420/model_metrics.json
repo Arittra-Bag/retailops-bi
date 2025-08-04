@@ -1,0 +1,560 @@
+{
+  "clustering": {
+    "optimal_clusters": 6,
+    "metrics": [
+      {
+        "n_clusters": 2,
+        "silhouette_score": 0.487416489151155,
+        "calinski_harabasz_score": 87.50868223294685,
+        "davies_bouldin_score": 0.993447538069588,
+        "inertia": 733.0651933625295
+      },
+      {
+        "n_clusters": 3,
+        "silhouette_score": 0.5225020775815525,
+        "calinski_harabasz_score": 90.45757814861746,
+        "davies_bouldin_score": 0.8269707413352871,
+        "inertia": 530.4441318948822
+      },
+      {
+        "n_clusters": 4,
+        "silhouette_score": 0.5603561999204683,
+        "calinski_harabasz_score": 100.86169544663355,
+        "davies_bouldin_score": 0.9336815596225402,
+        "inertia": 389.00955613611745
+      },
+      {
+        "n_clusters": 5,
+        "silhouette_score": 0.5836044129226822,
+        "calinski_harabasz_score": 97.45303595236376,
+        "davies_bouldin_score": 0.8725514151588774,
+        "inertia": 325.5926226503852
+      },
+      {
+        "n_clusters": 6,
+        "silhouette_score": 0.5846847181203687,
+        "calinski_harabasz_score": 95.83787150528778,
+        "davies_bouldin_score": 0.9290568035964736,
+        "inertia": 278.5059256800231
+      },
+      {
+        "n_clusters": 7,
+        "silhouette_score": 0.5786646271132682,
+        "calinski_harabasz_score": 104.35146595971275,
+        "davies_bouldin_score": 0.8005882614268635,
+        "inertia": 225.02627156997758
+      },
+      {
+        "n_clusters": 8,
+        "silhouette_score": 0.49463406651184727,
+        "calinski_harabasz_score": 108.59285221366207,
+        "davies_bouldin_score": 0.8651289228376986,
+        "inertia": 191.03648918841873
+      },
+      {
+        "n_clusters": 9,
+        "silhouette_score": 0.4182317255737156,
+        "calinski_harabasz_score": 107.56514516070436,
+        "davies_bouldin_score": 0.8585558538667645,
+        "inertia": 171.18734825419497
+      },
+      {
+        "n_clusters": 10,
+        "silhouette_score": 0.4977094684936637,
+        "calinski_harabasz_score": 108.52209733494517,
+        "davies_bouldin_score": 0.7588655369509352,
+        "inertia": 152.71389354850805
+      }
+    ],
+    "best_metrics": {
+      "n_clusters": 6,
+      "silhouette_score": 0.5846847181203687,
+      "calinski_harabasz_score": 95.83787150528778,
+      "davies_bouldin_score": 0.9290568035964736,
+      "inertia": 278.5059256800231
+    },
+    "cluster_profiles": {
+      "cluster_0": {
+        "cluster_id": 0,
+        "size": 10,
+        "percentage": 6.172839506172839,
+        "characteristics": {
+          "Recency": {
+            "mean": 0.8,
+            "median": 1.0,
+            "std": 0.4216370213557839
+          },
+          "Frequency": {
+            "mean": 1.8,
+            "median": 2.0,
+            "std": 0.42163702135578396
+          },
+          "Monetary": {
+            "mean": 786.6909999999999,
+            "median": 801.075,
+            "std": 352.67368598717115
+          },
+          "Avg_Order_Value": {
+            "mean": 446.7315,
+            "median": 473.21500000000003,
+            "std": 182.70704714940678
+          },
+          "Purchase_Frequency": {
+            "mean": 27.0,
+            "median": 30.0,
+            "std": 6.324555320336759
+          },
+          "Product_Variety": {
+            "mean": 44.3,
+            "median": 31.0,
+            "std": 35.584172511572234
+          },
+          "Tenure_Days": {
+            "mean": 1.0,
+            "median": 1.0,
+            "std": 0.0
+          }
+        },
+        "business_insights": {
+          "avg_clv": 786.6909999999999,
+          "avg_recency": 0.8,
+          "avg_frequency": 1.8,
+          "total_revenue": 7866.909999999999
+        }
+      },
+      "cluster_1": {
+        "cluster_id": 1,
+        "size": 78,
+        "percentage": 48.148148148148145,
+        "characteristics": {
+          "Recency": {
+            "mean": 1.0,
+            "median": 1.0,
+            "std": 0.0
+          },
+          "Frequency": {
+            "mean": 1.0,
+            "median": 1.0,
+            "std": 0.0
+          },
+          "Monetary": {
+            "mean": 364.40653846153845,
+            "median": 294.04499999999996,
+            "std": 258.12314544638355
+          },
+          "Avg_Order_Value": {
+            "mean": 364.40653846153845,
+            "median": 294.04499999999996,
+            "std": 258.12314544638355
+          },
+          "Purchase_Frequency": {
+            "mean": 15.0,
+            "median": 15.0,
+            "std": 0.0
+          },
+          "Product_Variety": {
+            "mean": 20.23076923076923,
+            "median": 19.0,
+            "std": 16.012108305517184
+          },
+          "Tenure_Days": {
+            "mean": 1.0,
+            "median": 1.0,
+            "std": 0.0
+          }
+        },
+        "business_insights": {
+          "avg_clv": 364.40653846153845,
+          "avg_recency": 1.0,
+          "avg_frequency": 1.0,
+          "total_revenue": 28423.71
+        }
+      },
+      "cluster_2": {
+        "cluster_id": 2,
+        "size": 60,
+        "percentage": 37.03703703703704,
+        "characteristics": {
+          "Recency": {
+            "mean": 0.0,
+            "median": 0.0,
+            "std": 0.0
+          },
+          "Frequency": {
+            "mean": 1.0,
+            "median": 1.0,
+            "std": 0.0
+          },
+          "Monetary": {
+            "mean": 327.9246666666667,
+            "median": 260.83000000000004,
+            "std": 242.71048014962858
+          },
+          "Avg_Order_Value": {
+            "mean": 327.9246666666667,
+            "median": 260.83000000000004,
+            "std": 242.71048014962858
+          },
+          "Purchase_Frequency": {
+            "mean": 30.0,
+            "median": 30.0,
+            "std": 0.0
+          },
+          "Product_Variety": {
+            "mean": 19.1,
+            "median": 14.0,
+            "std": 18.0091313938047
+          },
+          "Tenure_Days": {
+            "mean": 0.0,
+            "median": 0.0,
+            "std": 0.0
+          }
+        },
+        "business_insights": {
+          "avg_clv": 327.9246666666667,
+          "avg_recency": 0.0,
+          "avg_frequency": 1.0,
+          "total_revenue": 19675.480000000003
+        }
+      },
+      "cluster_3": {
+        "cluster_id": 3,
+        "size": 2,
+        "percentage": 1.2345679012345678,
+        "characteristics": {
+          "Recency": {
+            "mean": 0.0,
+            "median": 0.0,
+            "std": 0.0
+          },
+          "Frequency": {
+            "mean": 2.5,
+            "median": 2.5,
+            "std": 0.7071067811865476
+          },
+          "Monetary": {
+            "mean": 5069.379999999999,
+            "median": 5069.379999999999,
+            "std": 1528.2557440428614
+          },
+          "Avg_Order_Value": {
+            "mean": 2202.295,
+            "median": 2202.295,
+            "std": 1234.2053890864354
+          },
+          "Purchase_Frequency": {
+            "mean": 52.5,
+            "median": 52.5,
+            "std": 10.606601717798213
+          },
+          "Product_Variety": {
+            "mean": 20.5,
+            "median": 20.5,
+            "std": 3.5355339059327378
+          },
+          "Tenure_Days": {
+            "mean": 0.5,
+            "median": 0.5,
+            "std": 0.7071067811865476
+          }
+        },
+        "business_insights": {
+          "avg_clv": 5069.379999999999,
+          "avg_recency": 0.0,
+          "avg_frequency": 2.5,
+          "total_revenue": 10138.759999999998
+        }
+      },
+      "cluster_4": {
+        "cluster_id": 4,
+        "size": 5,
+        "percentage": 3.0864197530864197,
+        "characteristics": {
+          "Recency": {
+            "mean": 0.4,
+            "median": 0.0,
+            "std": 0.5477225575051662
+          },
+          "Frequency": {
+            "mean": 1.0,
+            "median": 1.0,
+            "std": 0.0
+          },
+          "Monetary": {
+            "mean": 2243.93,
+            "median": 2286.24,
+            "std": 649.6387612358117
+          },
+          "Avg_Order_Value": {
+            "mean": 2243.93,
+            "median": 2286.24,
+            "std": 649.6387612358117
+          },
+          "Purchase_Frequency": {
+            "mean": 24.0,
+            "median": 30.0,
+            "std": 8.215838362577491
+          },
+          "Product_Variety": {
+            "mean": 39.6,
+            "median": 30.0,
+            "std": 24.398770460824455
+          },
+          "Tenure_Days": {
+            "mean": 0.4,
+            "median": 0.0,
+            "std": 0.5477225575051662
+          }
+        },
+        "business_insights": {
+          "avg_clv": 2243.93,
+          "avg_recency": 0.4,
+          "avg_frequency": 1.0,
+          "total_revenue": 11219.65
+        }
+      },
+      "cluster_5": {
+        "cluster_id": 5,
+        "size": 7,
+        "percentage": 4.320987654320987,
+        "characteristics": {
+          "Recency": {
+            "mean": 0.0,
+            "median": 0.0,
+            "std": 0.0
+          },
+          "Frequency": {
+            "mean": 2.2857142857142856,
+            "median": 2.0,
+            "std": 0.48795003647426655
+          },
+          "Monetary": {
+            "mean": 781.3342857142858,
+            "median": 555.28,
+            "std": 551.917706542595
+          },
+          "Avg_Order_Value": {
+            "mean": 333.017619047619,
+            "median": 270.365,
+            "std": 192.5836952346644
+          },
+          "Purchase_Frequency": {
+            "mean": 68.57142857142857,
+            "median": 60.0,
+            "std": 14.638501094227998
+          },
+          "Product_Variety": {
+            "mean": 50.142857142857146,
+            "median": 36.0,
+            "std": 43.24900219052679
+          },
+          "Tenure_Days": {
+            "mean": 0.0,
+            "median": 0.0,
+            "std": 0.0
+          }
+        },
+        "business_insights": {
+          "avg_clv": 781.3342857142858,
+          "avg_recency": 0.0,
+          "avg_frequency": 2.2857142857142856,
+          "total_revenue": 5469.34
+        }
+      }
+    }
+  },
+  "churn_model": {
+    "auc_score": 1.0,
+    "cv_mean_auc": 1.0,
+    "cv_std_auc": 0.0,
+    "classification_report": {
+      "0": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 26.0
+      },
+      "1": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 7.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 33.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 33.0
+      }
+    },
+    "feature_importance": {
+      "Frequency": 0.0,
+      "Monetary": 0.9999999999999998,
+      "Avg_Order_Value": 1.654140555856916e-17,
+      "Purchase_Frequency": 1.9642919100800875e-17,
+      "Product_Variety": 1.0855297397811009e-16,
+      "Tenure_Days": 0.0,
+      "Transaction_Count": 3.1015135422317167e-18
+    },
+    "churn_threshold_days": 30
+  },
+  "clv_model": {
+    "rmse": 187.05263652595048,
+    "r2_score": 0.5779964558706404,
+    "cv_mean_r2": 0.7138669449318995,
+    "cv_std_r2": 0.1724107144719922,
+    "feature_importance": {
+      "Recency": 0.00048332900875016173,
+      "Frequency": 0.03696470654422702,
+      "Avg_Order_Value": 0.8762498541349835,
+      "Purchase_Frequency": 0.06908910441640896,
+      "Product_Variety": 0.006566493407668403,
+      "Tenure_Days": 0.0034355127391614685,
+      "Transaction_Count": 0.007210999748800491
+    }
+  },
+  "business_insights": {
+    "customer_overview": {
+      "total_customers": 162,
+      "total_revenue": 82793.85,
+      "avg_clv": 511.07314814814816,
+      "avg_recency": 0.5432098765432098,
+      "avg_frequency": 1.123456790123457
+    },
+    "rfm_segments": {
+      "Champions": {
+        "Customer_Count": 11,
+        "Total_Revenue": 18229.38,
+        "Avg_CLV": 1657.22,
+        "Avg_Frequency": 2.27,
+        "Avg_Recency": 0.18,
+        "Avg_Churn_Risk": 0.0
+      },
+      "Loyal Customers": {
+        "Customer_Count": 27,
+        "Total_Revenue": 23986.78,
+        "Avg_CLV": 888.4,
+        "Avg_Frequency": 1.19,
+        "Avg_Recency": 0.19,
+        "Avg_Churn_Risk": 0.0
+      },
+      "New Customers": {
+        "Customer_Count": 55,
+        "Total_Revenue": 17322.99,
+        "Avg_CLV": 314.96,
+        "Avg_Frequency": 1.0,
+        "Avg_Recency": 0.82,
+        "Avg_Churn_Risk": 0.24
+      },
+      "Potential Loyalists": {
+        "Customer_Count": 50,
+        "Total_Revenue": 20647.83,
+        "Avg_CLV": 412.96,
+        "Avg_Frequency": 1.02,
+        "Avg_Recency": 0.34,
+        "Avg_Churn_Risk": 0.16
+      },
+      "Promising": {
+        "Customer_Count": 19,
+        "Total_Revenue": 2606.87,
+        "Avg_CLV": 137.2,
+        "Avg_Frequency": 1.0,
+        "Avg_Recency": 1.0,
+        "Avg_Churn_Risk": 0.63
+      }
+    },
+    "ml_clusters": {
+      "0": {
+        "Customer_Count": 10,
+        "Total_Revenue": 7866.91,
+        "Avg_CLV": 786.69,
+        "Predicted_CLV": 709.43,
+        "Avg_Churn_Risk": 0.0
+      },
+      "1": {
+        "Customer_Count": 78,
+        "Total_Revenue": 28423.71,
+        "Avg_CLV": 364.41,
+        "Predicted_CLV": 366.37,
+        "Avg_Churn_Risk": 0.21
+      },
+      "2": {
+        "Customer_Count": 60,
+        "Total_Revenue": 19675.48,
+        "Avg_CLV": 327.92,
+        "Predicted_CLV": 330.74,
+        "Avg_Churn_Risk": 0.28
+      },
+      "3": {
+        "Customer_Count": 2,
+        "Total_Revenue": 10138.76,
+        "Avg_CLV": 5069.38,
+        "Predicted_CLV": 4063.92,
+        "Avg_Churn_Risk": 0.0
+      },
+      "4": {
+        "Customer_Count": 5,
+        "Total_Revenue": 11219.65,
+        "Avg_CLV": 2243.93,
+        "Predicted_CLV": 2636.18,
+        "Avg_Churn_Risk": 0.0
+      },
+      "5": {
+        "Customer_Count": 7,
+        "Total_Revenue": 5469.34,
+        "Avg_CLV": 781.33,
+        "Predicted_CLV": 684.61,
+        "Avg_Churn_Risk": 0.0
+      }
+    },
+    "high_value_customers": {
+      "count": 33,
+      "percentage": 20.37037037037037,
+      "revenue_contribution": 55.5014291520445,
+      "avg_clv": 1392.4778787878786,
+      "avg_churn_risk": 9.04584017352823e-06
+    },
+    "churn_risk_analysis": {
+      "Low": {
+        "Customer_ID": 129,
+        "Monetary": 79617.48,
+        "Predicted_CLV": 608.02
+      },
+      "Medium": {
+        "Customer_ID": 0,
+        "Monetary": 0.0,
+        "Predicted_CLV": NaN
+      },
+      "High": {
+        "Customer_ID": 33,
+        "Monetary": 3176.37,
+        "Predicted_CLV": 96.43
+      }
+    },
+    "recommendations": {
+      "churn_prevention": {
+        "customers_at_risk": 33,
+        "revenue_at_risk": 3182.267000000001,
+        "action": "Implement targeted retention campaigns for high-value, high-churn-risk customers"
+      },
+      "engagement_opportunity": {
+        "customer_count": 36,
+        "potential_revenue": 36469.85069999999,
+        "action": "Increase purchase frequency through personalized recommendations and loyalty programs"
+      },
+      "vip_program": {
+        "customer_count": 11,
+        "revenue_contribution": 18229.38,
+        "action": "Create VIP program with exclusive benefits and early access to new products"
+      }
+    }
+  }
+}

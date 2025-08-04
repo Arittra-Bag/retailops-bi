@@ -1,0 +1,10 @@
+{
+  "decomposition": {
+    "trend_strength": 0.6637906073253885,
+    "seasonal_strength": 0.17679568797009282,
+    "trend_direction": "increasing",
+    "seasonal_period": 7,
+    "residual_autocorr": 0.23354555292087026,
+    "components": {
+      "trend": {
+        
