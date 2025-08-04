@@ -66,17 +66,32 @@ def load_processed_data():
 @app.on_event("startup")
 async def startup_event():
     """Load data on startup"""
-    load_processed_data()
+    try:
+        load_processed_data()
+        logger.info("✅ API startup completed successfully")
+    except Exception as e:
+        logger.error(f"❌ API startup error: {str(e)}")
+        # Continue anyway - API will work with empty cache
 
 @app.get("/")
 async def root():
     """Root endpoint"""
-    return {
-        "message": "RetailOps BI Analytics API", 
-        "version": "1.0.0",
-        "available_datasets": list(data_cache.keys()),
-        "docs_url": "/docs"
-    }
+    try:
+        return {
+            "message": "RetailOps BI Analytics API", 
+            "version": "1.0.0",
+            "available_datasets": list(data_cache.keys()) if data_cache else [],
+            "docs_url": "/docs",
+            "status": "online"
+        }
+    except Exception as e:
+        logger.error(f"Root endpoint error: {str(e)}")
+        return {
+            "message": "RetailOps BI Analytics API", 
+            "version": "1.0.0",
+            "status": "online",
+            "docs_url": "/docs"
+        }
 
 @app.get("/health")
 async def health_check():
