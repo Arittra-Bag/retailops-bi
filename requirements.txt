@@ -1,6 +1,6 @@
 # Core Data Processing
-pandas==2.1.4
-numpy==1.25.2
+pandas==2.3.1
+numpy==1.26.4
 openpyxl==3.1.2
 
 # Cloud & Database
@@ -22,10 +22,10 @@ langsmith==0.0.69
 langchain-experimental==0.0.47
 
 # Data Science & ML
-scikit-learn==1.3.2
-plotly==5.17.0
-seaborn==0.13.0
-matplotlib==3.8.2
+scikit-learn>=1.3.0,<1.4.0
+plotly>=5.15.0
+seaborn>=0.12.0
+matplotlib>=3.7.0
 
 # Time Series Analysis
 statsmodels==0.14.1
@@ -34,9 +34,9 @@ statsmodels==0.14.1
 pyspark==3.5.0
 
 # Deep Learning
-tensorflow==2.15.0
-torch==2.1.1
-torchvision==0.16.1
+tensorflow>=2.13.0,<2.16.0
+torch>=2.0.0,<2.2.0
+torchvision>=0.15.0,<0.17.0
 
 # Statistical Testing & Experimentation
 scipy==1.11.4
