@@ -344,14 +344,26 @@ class SnowflakeManager:
                     if 'Date' in df.columns:
                         df['Date'] = pd.to_datetime(df['Date'])
                     
-                    # Load to Snowflake
-                    df.to_sql(
-                        table_name,
-                        self.engine,
-                        if_exists='replace',
-                        index=False,
-                        method=pd_writer
+                    # Load to Snowflake using direct cursor
+                    cursor = self.connection.cursor()
+                    
+                    # Create table if not exists (simplified)
+                    create_table_sql = f"""
+                    CREATE TABLE IF NOT EXISTS {table_name} (
+                        {', '.join([f'{col} VARCHAR' for col in df.columns])}
                     )
+                    """
+                    cursor.execute(create_table_sql)
+                    
+                    # Insert data row by row
+                    for _, row in df.iterrows():
+                        values = [str(val) if val is not None else 'NULL' for val in row.values]
+                        placeholders = ', '.join(['%s'] * len(values))
+                        insert_sql = f"INSERT INTO {table_name} VALUES ({placeholders})"
+                        cursor.execute(insert_sql, values)
+                    
+                    self.connection.commit()
+                    cursor.close()
                     
                     logger.info(f"✅ Loaded {len(df)} rows to {table_name}")
                 else:
@@ -367,14 +379,24 @@ class SnowflakeManager:
     def execute_query(self, query: str) -> Optional[pd.DataFrame]:
         """Execute a query and return results as DataFrame"""
         try:
-            if not self.engine:
-                logger.error("No SQLAlchemy engine available")
+            if not self.connection:
+                logger.error("No Snowflake connection available")
                 return None
             
             logger.info(f"Executing query: {query[:100]}...")
-            result = pd.read_sql(query, self.engine)
-            logger.info(f"Query returned {len(result)} rows")
-            return result
+            cursor = self.connection.cursor()
+            cursor.execute(query)
+            result = cursor.fetchall()
+            columns = [desc[0] for desc in cursor.description] if cursor.description else []
+            cursor.close()
+            
+            if result:
+                df = pd.DataFrame(result, columns=columns)
+                logger.info(f"Query returned {len(df)} rows")
+                return df
+            else:
+                logger.info("Query returned no rows")
+                return pd.DataFrame(columns=columns)
             
         except Exception as e:
             logger.error(f"Error executing query: {str(e)}")

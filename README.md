@@ -7,6 +7,13 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org)
 [![Snowflake](https://img.shields.io/badge/Snowflake-Cloud%20DW-lightblue.svg)](https://snowflake.com)
 
+> ⚠️ **Important Note for Render Free Tier Users**
+> 
+> This application may exceed Render's free tier memory limits due to its comprehensive ML/DL processing capabilities. If you encounter memory limit warnings:
+> - **Local Development**: Recommended for full functionality testing
+> - **Production Deployment**: Consider upgrading to Render's paid plans for optimal performance
+> - **Memory Optimization**: The application includes smart caching and fallback mechanisms for better resource management
+
 ## 🎯 Overview
 
 RetailOps BI transforms raw retail transaction data into actionable business insights using cutting-edge AI and distributed computing. Built for scalability and production deployment.
@@ -211,7 +218,10 @@ python run_system.py
 
 ### **Production (Docker)**
 ```bash
+# Build the image
 docker build -t retailops-bi .
+
+# Run with default settings (demo mode)
 docker run -p 8000:8000 -p 8501:8501 retailops-bi
 ```
 

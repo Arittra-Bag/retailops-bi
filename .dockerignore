@@ -1,0 +1,50 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Data (will be generated)
+data/raw/
+data/processed/
+data/models/
+data/reports/
+
+# Examples (not needed in production)
+examples/
+
+# Documentation
+README.md
+*.md
+
+# Environment files
+.env
+.env.example
+
+# Docker
+Dockerfile
+.dockerignore 
