@@ -35,7 +35,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Configuration
-API_BASE_URL = "http://localhost:8000/api"
+import os
+API_BASE_URL = os.environ.get('API_BASE_URL', 'https://retailops-bi.onrender.com/api')
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 DATA_PATH = PROJECT_ROOT / "data" / "processed"
 
@@ -647,7 +648,7 @@ def show_ai_insights_page(datasets):
                             st.success("🎉 **Executive PDF Report Complete!**")
                             st.balloons()
                             
-                            download_url = f"http://localhost:8000{result['download_url']}"
+                            download_url = f"{API_BASE_URL.replace('/api', '')}{result['download_url']}"
                             
                             st.markdown(f"""
                             <div style="text-align: center; background: linear-gradient(135deg, #FF4B4B, #FF6B6B); 
