@@ -61,8 +61,8 @@ graph TB
 
 ### 1. Clone & Setup
 ```bash
-git clone <repository-url>
-cd amazon
+git clone https://github.com/Arittra-Bag/retailops-bi.git
+cd retailops-bi
 pip install -r requirements.txt
 ```
 
@@ -85,7 +85,7 @@ python run_system.py
 ## 📁 System Architecture
 
 ```
-amazon/
+retailops-bi/
 ├── src/
 │   ├── api/                 # FastAPI backend services
 │   ├── dashboard/           # Streamlit analytics interface  

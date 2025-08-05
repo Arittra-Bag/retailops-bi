@@ -1,25 +1,16 @@
 import os
 import streamlit as st
 
-# Frontend Configuration for Render Deployment
+# Frontend Configuration for Local Development
 def get_api_config():
     """Get API configuration based on environment"""
     
-    # Production Render deployment
-    if os.environ.get('RENDER'):
-        return {
-            'API_BASE_URL': 'https://retailops-bi.onrender.com/api',
-            'BACKEND_URL': 'https://retailops-bi.onrender.com',
-            'ENVIRONMENT': 'production'
-        }
-    
-    # Local development
-    else:
-        return {
-            'API_BASE_URL': 'http://localhost:8000/api',
-            'BACKEND_URL': 'http://localhost:8000',
-            'ENVIRONMENT': 'development'
-        }
+    # Local development (default)
+    return {
+        'API_BASE_URL': 'http://localhost:8000/api',
+        'BACKEND_URL': 'http://localhost:8000',
+        'ENVIRONMENT': 'development'
+    }
 
 def setup_streamlit_config():
     """Setup Streamlit configuration for deployment"""
