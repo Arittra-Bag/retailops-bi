@@ -10,33 +10,12 @@ from pathlib import Path
 from datetime import datetime, timedelta
 import logging
 
-# Page configuration
-st.set_page_config(
-    page_title="RetailOps BI Dashboard",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+# Import configuration
+from streamlit_config import setup_streamlit_config, show_connection_status
 
-# Custom CSS
-st.markdown("""
-<style>
-    .metric-card {
-        background-color: #f0f2f6;
-        padding: 15px;
-        border-radius: 10px;
-        border-left: 5px solid #1f77b4;
-    }
-    .big-font {
-        font-size: 24px !important;
-        font-weight: bold;
-    }
-</style>
-""", unsafe_allow_html=True)
-
-# Configuration
-import os
-API_BASE_URL = os.environ.get('API_BASE_URL', 'https://retailops-bi.onrender.com/api')
+# Setup configuration
+config = setup_streamlit_config()
+API_BASE_URL = config['API_BASE_URL']
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 DATA_PATH = PROJECT_ROOT / "data" / "processed"
 
@@ -96,6 +75,9 @@ def main():
     # Header
     st.title("📊 RetailOps BI Dashboard")
     st.markdown("**Comprehensive retail analytics and business intelligence platform**")
+    
+    # Show connection status
+    is_connected = show_connection_status(config)
     
     # Sidebar
     st.sidebar.title("Navigation")
@@ -648,7 +630,7 @@ def show_ai_insights_page(datasets):
                             st.success("🎉 **Executive PDF Report Complete!**")
                             st.balloons()
                             
-                            download_url = f"{API_BASE_URL.replace('/api', '')}{result['download_url']}"
+                            download_url = f"{config['BACKEND_URL']}{result['download_url']}"
                             
                             st.markdown(f"""
                             <div style="text-align: center; background: linear-gradient(135deg, #FF4B4B, #FF6B6B); 
