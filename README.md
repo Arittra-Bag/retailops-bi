@@ -225,6 +225,23 @@ docker build -t retailops-bi .
 docker run -p 8000:8000 -p 8501:8501 retailops-bi
 ```
 
+### **Local Kubernetes (Development Only)**
+```bash
+# Build the image
+docker build -t retailops-bi:latest .
+
+# Load the image into your cluster (example uses Minikube)
+minikube image load retailops-bi:latest
+
+# Deploy the stack
+kubectl apply -f k8s/local-dev.yaml
+
+# Access services (port-forward or use `minikube service`)
+kubectl port-forward service/retailops-bi 8000:8000 8501:8501
+```
+
+> The provided manifests are intended for local development and are **not** production hardened.
+
 ### **Cloud Deployment**
 - Optimized for **Render**, **AWS**, **GCP**
 - Horizontal scaling supported
